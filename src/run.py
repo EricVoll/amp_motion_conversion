@@ -28,7 +28,9 @@ class Animator:
         self.load_json()
         
     def load_json(self):
-        path = "/home/eric/catkin_ws/src/amp_motion_conversion/cfg/run.json"
+        path = "/home/eric/catkin_ws/src/amp_motion_conversion/cfg/motions/humanoid3d_spinkick.txt"
+        path = "/home/eric/catkin_ws/src/amp_motion_conversion/cfg/motions/humanoid3d_cartwheel.txt"
+        #path = "/home/eric/catkin_ws/src/amp_motion_conversion/cfg/motions/humanoid3d_punch.txt"
         with open(path) as f:
             lines = f.read()
 
@@ -180,18 +182,19 @@ class Animator:
         t.header.stamp = rospy.Time.now()
         t.header.frame_id = "map"
         t.child_frame_id = "base_link"
-        t.transform.translation.x = 2 * frame[1]
-        t.transform.translation.y = 2 * -frame[3]
-        t.transform.translation.z = 2 * frame[2]
+        t.transform.translation.x = frame[1]
+        t.transform.translation.y = -frame[3]
+        t.transform.translation.z = frame[2]
         t.transform.rotation.w = frame[4]
         t.transform.rotation.x = frame[5]
-        t.transform.rotation.y = frame[6]
-        t.transform.rotation.z = frame[7]
+        t.transform.rotation.y = -frame[7]
+        t.transform.rotation.z = frame[6]
         return t
 
     def process_frame(self, t):
 
         frame = self.obj['Frames'][t]
+        # frame = self.get()
 
         s = self.get_joint_state(frame)
         t = self.get_robot_base_pose(frame)
@@ -206,7 +209,7 @@ class Animator:
         stop = False
         while not rospy.is_shutdown() and not stop:
             sleep_duration = self.process_frame(counter)
-            rospy.sleep(sleep_duration)
+            rospy.sleep(sleep_duration * 20)
 
             counter += 1
 
