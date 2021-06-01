@@ -30,7 +30,7 @@ class Animator:
     def load_json(self):
         path = "/home/eric/catkin_ws/src/amp_motion_conversion/cfg/motions/humanoid3d_spinkick.txt"
         path = "/home/eric/catkin_ws/src/amp_motion_conversion/cfg/motions/humanoid3d_cartwheel.txt"
-        #path = "/home/eric/catkin_ws/src/amp_motion_conversion/cfg/motions/humanoid3d_punch.txt"
+        # path = "/home/eric/catkin_ws/src/amp_motion_conversion/cfg/motions/humanoid3d_punch.txt"
         with open(path) as f:
             lines = f.read()
 
@@ -45,7 +45,7 @@ class Animator:
             q = [-x, -y, -z, -w]
         else:
             q = [x, y, z, w]
-        (r,p,y) = euler_from_quaternion(q)
+        (r,p,y) = euler_from_quaternion(q, axes='rxyz')
         return [r,p,y]
 
     def get(self):
@@ -209,7 +209,7 @@ class Animator:
         stop = False
         while not rospy.is_shutdown() and not stop:
             sleep_duration = self.process_frame(counter)
-            rospy.sleep(sleep_duration * 20)
+            rospy.sleep(sleep_duration)
 
             counter += 1
 
