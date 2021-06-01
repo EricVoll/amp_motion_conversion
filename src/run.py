@@ -11,13 +11,26 @@ from geometry_msgs.msg import TransformStamped, Quaternion, PoseStamped
 
 import math
 import json
-
+import os, glob
 class Animator:
 
 
     def __init__(self):
 
         rospy.init_node('animator', anonymous=True)
+
+        self.in_dir = rospy.get_param('~in_dir')
+        self.out_dir = rospy.get_param('~out_dir')
+        self.speed = rospy.get_param('~speed', default=1)
+        self.store_converted = rospy.get_param('~store_converted', default=False)
+
+        self.files = []
+        file_query = os.path.join(self.in_dir, "*.txt")
+        for file in glob.glob(file_query):
+            self.files.append(file)
+        self.current_file_index = 0
+        self.file_count = len(self.files)
+
         # rospy.loginfo(euler_from_quaternion([0,0,0,1]))
         # self.tf_Buffer = tf.Buffer(rospy.Duration(10))
         # self.tf_listener = tf.TransformListener(self.tf_Buffer)
@@ -25,19 +38,28 @@ class Animator:
         # self.tf_static_broadcaster = tf.StaticTransformBroadcaster()
 
         self.state = rospy.Publisher('joint_states', JointState, queue_size=1)
-        self.load_json()
+        self.load_next_json()
         
-    def load_json(self):
-        path = "/home/eric/catkin_ws/src/amp_motion_conversion/cfg/motions/humanoid3d_spinkick.txt"
-        path = "/home/eric/catkin_ws/src/amp_motion_conversion/cfg/motions/humanoid3d_cartwheel.txt"
-        # path = "/home/eric/catkin_ws/src/amp_motion_conversion/cfg/motions/humanoid3d_punch.txt"
+    def load_next_json(self):
+        
+        path = self.files[self.current_file_index]
+
         with open(path) as f:
             lines = f.read()
 
         self.obj = json.loads(lines)
         self.num_frames = len(self.obj['Frames'])
+        self.obj['converted'] = []
+        self.obj['file_path'] = path
 
-        rospy.loginfo("Loaded %i Frames" % self.num_frames)
+        dir_name, file_name = os.path.split(path)
+        self.obj['save_path'] = os.path.join(self.out_dir,  file_name)        
+        self.obj['source_name'] = file_name
+        self.obj['duration_in_seconds'] = map(sum, zip(*self.obj['Frames']))[0]
+
+        rospy.loginfo("Loaded file %s with %i Frames" % (path, self.num_frames))
+
+        self.current_file_index += 1
 
     def quat_to_euler(self, w,x,y,z):
         q = []
@@ -191,15 +213,47 @@ class Animator:
         t.transform.rotation.z = frame[6]
         return t
 
+    def store_frame(self, frame, t, s, transform):
+        pos = transform.transform.translation
+        rot = transform.transform.rotation
+        
+        arr = [
+            frame[0], 
+            pos.x, 
+            pos.y, 
+            pos.z,
+            rot.x,
+            rot.y,
+            rot.z,
+            rot.w
+        ]
+
+        arr.extend(s.position)
+
+        self.obj['converted'].append(arr)
+
+    def store_current(self):
+        if not self.store_converted:
+            return
+
+        self.obj['Frames'] = None
+        json_string = json.dumps(self.obj)
+        with open(self.obj['save_path'], "w") as f:
+            f.write(json_string)
+        
+        rospy.loginfo("Saving to %s" % self.obj['save_path'])
+
     def process_frame(self, t):
 
         frame = self.obj['Frames'][t]
         # frame = self.get()
 
         s = self.get_joint_state(frame)
-        t = self.get_robot_base_pose(frame)
+        tr = self.get_robot_base_pose(frame)
         self.state.publish(s)
-        self.tf_broadcaster.sendTransform(t)        
+        self.tf_broadcaster.sendTransform(tr)     
+
+        self.store_frame(frame, t, s, tr)   
 
         # return how long to wait
         return frame[0]
@@ -207,18 +261,25 @@ class Animator:
     def spin(self):
         counter = 0
         stop = False
-        while not rospy.is_shutdown() and not stop:
-            sleep_duration = self.process_frame(counter)
-            rospy.sleep(sleep_duration)
+        while not rospy.is_shutdown():
+            while not stop:
+                sleep_duration = self.process_frame(counter)
+                rospy.sleep(sleep_duration * self.speed)
 
-            counter += 1
+                counter += 1
 
-            if counter == self.num_frames:
-                if self.obj['Loop'] == "wrap":
-                    counter = 0
-                else:
+                if counter == self.num_frames:
+                    self.store_current()
                     stop = True
 
+            if self.file_count - 1 > self.current_file_index:
+                self.current_file_index += 1
+                self.load_next_json()
+                counter = 0
+                stop = False
+            else:
+                rospy.loginfo("Finished with all files")
+                break
 
 
 

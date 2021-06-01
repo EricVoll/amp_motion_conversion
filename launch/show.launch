@@ -1,11 +1,20 @@
 <launch>
   <arg name="model" default="/home/eric/urdf/urdf/dog.xacro" />
   <arg name="gui" default="True" />
+  <arg name="in_dir" default="$(find amp_motion_conversion)/cfg/motions/sie"/>
+  <arg name="out_dir" default="$(find amp_motion_conversion)/cfg/motions/converted"/>
+  <arg name="playback_speed" default="0.05"/>
+  <arg name="store_converted" default="True"/>
   
   <param name="use_gui" value="$(arg gui)"/>
   <!--<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" ></node>-->
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
-  <node name="amp_motion_conversion" pkg="amp_motion_conversion" type="run.py" output="screen"/>
+  <node name="amp_motion_conversion" pkg="amp_motion_conversion" type="run.py" output="screen">
+    <param name="in_dir" value="$(arg in_dir)"/>
+    <param name="out_dir" value="$(arg out_dir)"/>
+    <param name="speed" value="$(arg playback_speed)"/>
+    <param name="store_converted" value="$(arg store_converted)"/>
+  </node>
 
   <arg name="rvizconfig" default="$(find amp_motion_conversion)/cfg/rviz.rviz" />
   <param name="robot_description" textfile="$(find amp_motion_conversion)/urdf/humanoid.urdf"/>
