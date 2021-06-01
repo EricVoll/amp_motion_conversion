@@ -8,7 +8,7 @@
   <node name="amp_motion_conversion" pkg="amp_motion_conversion" type="run.py" output="screen"/>
 
   <arg name="rvizconfig" default="$(find amp_motion_conversion)/cfg/rviz.rviz" />
-  <param name="robot_description" textfile="/home/eric/urdf/urdf/humanoid.urdf"/>
+  <param name="robot_description" textfile="$(find amp_motion_conversion)/urdf/humanoid.urdf"/>
   <!--<param name="robot_description" command="$(find xacro)/xacro $(arg model)" />-->
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true"  />
 
