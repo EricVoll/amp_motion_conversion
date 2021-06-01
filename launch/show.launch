@@ -1,5 +1,4 @@
 <launch>
-  <arg name="model" default="/home/eric/urdf/urdf/dog.xacro" />
   <arg name="gui" default="True" />
   <arg name="in_dir" default="$(find amp_motion_conversion)/cfg/motions/sie"/>
   <arg name="out_dir" default="$(find amp_motion_conversion)/cfg/motions/converted"/>
@@ -18,7 +17,6 @@
 
   <arg name="rvizconfig" default="$(find amp_motion_conversion)/cfg/rviz.rviz" />
   <param name="robot_description" textfile="$(find amp_motion_conversion)/urdf/humanoid.urdf"/>
-  <!--<param name="robot_description" command="$(find xacro)/xacro $(arg model)" />-->
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true"  />
 
 </launch>
