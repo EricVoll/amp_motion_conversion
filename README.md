@@ -9,6 +9,7 @@ To use it you will have to have ros installed and an existing catkin_ws:
 ```
 $ cd catkin_ws/src
 $ git clone git@github.com:EricVoll/map_motion_conversion
+$ catkin build or catkin_make (whatever you use)
 $ source ../devel/setup.bash
 $ roslaunch amp_motion_conversion show.launch
 ```
