@@ -1,9 +1,9 @@
 <launch>
   <arg name="gui" default="True" />
   <arg name="in_dir" default="$(find amp_motion_conversion)/cfg/motions/sie"/>
-  <arg name="out_dir" default="$(find amp_motion_conversion)/cfg/motions/converted"/>
-  <arg name="playback_speed" default="0.05"/>
-  <arg name="store_converted" default="True"/>
+  <arg name="out_dir" default="$(find amp_motion_conversion)/cfg/motions/sie/converted"/>
+  <arg name="playback_speed" default="0.35"/>
+  <arg name="store_converted" default="False"/>
   
   <param name="use_gui" value="$(arg gui)"/>
   <!--<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" ></node>-->
