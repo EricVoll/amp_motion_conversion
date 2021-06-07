@@ -1,0 +1,949 @@
+<!-- This file is licensed under MIT license -->
+<!-- Copyright (c) 2018 Xue Bin Peng -->
+<!-- https://github.com/xbpeng/DeepMimic -->
+<!-- This URDF was generated converting the original custom robot description -->
+<robot name="character">
+  <gazebo>
+    <pose>0 0 0.885 0 0 0</pose>
+  </gazebo>
+  <link name="root">
+    <inertial>
+      <mass value="6.0"/>
+      <origin xyz="0 0 0.07" rpy="0 0 0"/>
+      <inertia ixx="0.019440000000000002" ixy="0" ixz="0" iyy="0.019440000000000002" iyz="0" izz="0.019440000000000002"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0.07" rpy="0 0 0"/>
+      <material name="color_xaji">
+        <color rgba="0.4706 0.549 0.6863 1"/>
+      </material>
+      <geometry>
+        <sphere radius="0.09"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.07" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.09"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="chest">
+    <inertial>
+      <mass value="14.0"/>
+      <origin xyz="0 0 0.12" rpy="0 0 0"/>
+      <inertia ixx="0.06776000000000001" ixy="0" ixz="0" iyy="0.06776000000000001" iyz="0" izz="0.06776000000000001"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0.12" rpy="0 0 0"/>
+      <material name="color_0y6d">
+        <color rgba="0.4706 0.549 0.6863 1"/>
+      </material>
+      <geometry>
+        <sphere radius="0.11"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.12" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.11"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="neck">
+    <inertial>
+      <mass value="2.0"/>
+      <origin xyz="0 0 0.175" rpy="0 0 0"/>
+      <inertia ixx="0.008405" ixy="0" ixz="0" iyy="0.008405" iyz="0" izz="0.008405"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0.175" rpy="0 0 0"/>
+      <material name="color_pbhs">
+        <color rgba="0.4706 0.549 0.6863 1"/>
+      </material>
+      <geometry>
+        <sphere radius="0.1025"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.175" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.1025"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="right_hip">
+    <visual>
+      <material name="color_ahxt">
+        <color rgba="0.6392 0.6941 0.7372 1"/>
+      </material>
+      <geometry>
+        <sphere radius="0.055"/>
+      </geometry>
+      <origin xyz="0.0 0.0 -0.06" rpy="0 0 0"/>
+    </visual>
+    <visual>
+      <material name="color_ahxt">
+        <color rgba="0.6392 0.6941 0.7372 1"/>
+      </material>
+      <geometry>
+        <sphere radius="0.055"/>
+      </geometry>
+      <origin xyz="0.0 0.0 -0.36" rpy="0 0 0"/>
+    </visual>
+    <inertial>
+      <mass value="4.5"/>
+      <origin xyz="0 0 -0.21" rpy="0 0 0"/>
+      <inertia ixx="0.037153124999999995" ixy="0.0" ixz="0.0" iyy="0.037153124999999995" iyz="0.0" izz="0.00680625"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 -0.21" rpy="0 0 0"/>
+      <material name="color_ahxt">
+        <color rgba="0.6392 0.6941 0.7372 1"/>
+      </material>
+      <geometry>
+        <cylinder radius="0.055" length="0.3"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.21" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.055" length="0.3"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="right_knee">
+    <visual>
+      <material name="color_hv3a">
+        <color rgba="0.6392 0.6941 0.7372 1"/>
+      </material>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+      <origin xyz="0.0 0.0 -0.04500000000000001" rpy="0 0 0"/>
+    </visual>
+    <visual>
+      <material name="color_hv3a">
+        <color rgba="0.6392 0.6941 0.7372 1"/>
+      </material>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+      <origin xyz="0.0 0.0 -0.355" rpy="0 0 0"/>
+    </visual>
+    <inertial>
+      <mass value="3"/>
+      <origin xyz="0 0 -0.2" rpy="0 0 0"/>
+      <inertia ixx="0.025900000000000003" ixy="0.0" ixz="0.0" iyy="0.025900000000000003" iyz="0.0" izz="0.0037500000000000007"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 -0.2" rpy="0 0 0"/>
+      <material name="color_hv3a">
+        <color rgba="0.6392 0.6941 0.7372 1"/>
+      </material>
+      <geometry>
+        <cylinder radius="0.05" length="0.31"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.2" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.05" length="0.31"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="right_ankle">
+    <inertial>
+      <mass value="1"/>
+      <origin xyz="0.045 0 -0.0225" rpy="0 0 0"/>
+      <inertia ixx="0.0009270833333333333" ixy="0.0" ixz="0.0" iyy="0.0028628333333333327" iyz="0.0" izz="0.003285749999999999"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.045 0 -0.0225" rpy="0 0 0"/>
+      <material name="color_3zmf">
+        <color rgba="0.6392 0.6941 0.7372 1"/>
+      </material>
+      <geometry>
+        <box size="0.177 0.09 0.055"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.045 0 -0.0225" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.177 0.09 0.055"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="right_shoulder">
+    <visual>
+      <material name="color_8mdd">
+        <color rgba="0.6392 0.6941 0.7372 1"/>
+      </material>
+      <geometry>
+        <sphere radius="0.045"/>
+      </geometry>
+      <origin xyz="0.0 0.0 -0.05000000000000002" rpy="0 0 0"/>
+    </visual>
+    <visual>
+      <material name="color_8mdd">
+        <color rgba="0.6392 0.6941 0.7372 1"/>
+      </material>
+      <geometry>
+        <sphere radius="0.045"/>
+      </geometry>
+      <origin xyz="0.0 0.0 -0.23" rpy="0 0 0"/>
+    </visual>
+    <inertial>
+      <mass value="1.5"/>
+      <origin xyz="0 0 -0.14" rpy="0 0 0"/>
+      <inertia ixx="0.004809374999999999" ixy="0.0" ixz="0.0" iyy="0.004809374999999999" iyz="0.0" izz="0.0015187500000000001"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 -0.14" rpy="0 0 0"/>
+      <material name="color_8mdd">
+        <color rgba="0.6392 0.6941 0.7372 1"/>
+      </material>
+      <geometry>
+        <cylinder radius="0.045" length="0.18"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.14" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.045" length="0.18"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="right_elbow">
+    <visual>
+      <material name="color_4v30">
+        <color rgba="0.6392 0.6941 0.7372 1"/>
+      </material>
+      <geometry>
+        <sphere radius="0.04"/>
+      </geometry>
+      <origin xyz="0.0 0.0 -0.05249999999999999" rpy="0 0 0"/>
+    </visual>
+    <visual>
+      <material name="color_4v30">
+        <color rgba="0.6392 0.6941 0.7372 1"/>
+      </material>
+      <geometry>
+        <sphere radius="0.04"/>
+      </geometry>
+      <origin xyz="0.0 0.0 -0.1875" rpy="0 0 0"/>
+    </visual>
+    <inertial>
+      <mass value="1"/>
+      <origin xyz="0 0 -0.12" rpy="0 0 0"/>
+      <inertia ixx="0.0019187499999999999" ixy="0.0" ixz="0.0" iyy="0.0019187499999999999" iyz="0.0" izz="0.0008"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 -0.12" rpy="0 0 0"/>
+      <material name="color_4v30">
+        <color rgba="0.6392 0.6941 0.7372 1"/>
+      </material>
+      <geometry>
+        <cylinder radius="0.04" length="0.135"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.12" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.04" length="0.135"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="right_wrist">
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.00032" ixy="0" ixz="0" iyy="0.00032" iyz="0" izz="0.00032"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="color_t9nt">
+        <color rgba="0.5392 0.5941 0.6372 1"/>
+      </material>
+      <geometry>
+        <sphere radius="0.04"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.04"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="left_hip">
+    <visual>
+      <material name="color_3w5u">
+        <color rgba="0.3529 0.41176 0.47059 1"/>
+      </material>
+      <geometry>
+        <sphere radius="0.055"/>
+      </geometry>
+      <origin xyz="0.0 0.0 -0.06" rpy="0 0 0"/>
+    </visual>
+    <visual>
+      <material name="color_3w5u">
+        <color rgba="0.3529 0.41176 0.47059 1"/>
+      </material>
+      <geometry>
+        <sphere radius="0.055"/>
+      </geometry>
+      <origin xyz="0.0 0.0 -0.36" rpy="0 0 0"/>
+    </visual>
+    <inertial>
+      <mass value="4.5"/>
+      <origin xyz="0 0 -0.21" rpy="0 0 0"/>
+      <inertia ixx="0.037153124999999995" ixy="0.0" ixz="0.0" iyy="0.037153124999999995" iyz="0.0" izz="0.00680625"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 -0.21" rpy="0 0 0"/>
+      <material name="color_3w5u">
+        <color rgba="0.3529 0.41176 0.47059 1"/>
+      </material>
+      <geometry>
+        <cylinder radius="0.055" length="0.3"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.21" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.055" length="0.3"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="left_knee">
+    <visual>
+      <material name="color_zbik">
+        <color rgba="0.3529 0.41176 0.47059 1"/>
+      </material>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+      <origin xyz="0.0 0.0 -0.04500000000000001" rpy="0 0 0"/>
+    </visual>
+    <visual>
+      <material name="color_zbik">
+        <color rgba="0.3529 0.41176 0.47059 1"/>
+      </material>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+      <origin xyz="0.0 0.0 -0.355" rpy="0 0 0"/>
+    </visual>
+    <inertial>
+      <mass value="3"/>
+      <origin xyz="0 0 -0.2" rpy="0 0 0"/>
+      <inertia ixx="0.025900000000000003" ixy="0.0" ixz="0.0" iyy="0.025900000000000003" iyz="0.0" izz="0.0037500000000000007"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 -0.2" rpy="0 0 0"/>
+      <material name="color_zbik">
+        <color rgba="0.3529 0.41176 0.47059 1"/>
+      </material>
+      <geometry>
+        <cylinder radius="0.05" length="0.31"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.2" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.05" length="0.31"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="left_ankle">
+    <inertial>
+      <mass value="1"/>
+      <origin xyz="0.045 0 -0.0225" rpy="0 0 0"/>
+      <inertia ixx="0.0009270833333333333" ixy="0.0" ixz="0.0" iyy="0.0028628333333333327" iyz="0.0" izz="0.003285749999999999"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.045 0 -0.0225" rpy="0 0 0"/>
+      <material name="color_cidk">
+        <color rgba="0.3529 0.41176 0.47059 1"/>
+      </material>
+      <geometry>
+        <box size="0.177 0.09 0.055"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.045 0 -0.0225" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.177 0.09 0.055"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="left_shoulder">
+    <visual>
+      <material name="color_wnnh">
+        <color rgba="0.3529 0.41176 0.47059 1"/>
+      </material>
+      <geometry>
+        <sphere radius="0.045"/>
+      </geometry>
+      <origin xyz="0.0 0.0 -0.05000000000000002" rpy="0 0 0"/>
+    </visual>
+    <visual>
+      <material name="color_wnnh">
+        <color rgba="0.3529 0.41176 0.47059 1"/>
+      </material>
+      <geometry>
+        <sphere radius="0.045"/>
+      </geometry>
+      <origin xyz="0.0 0.0 -0.23" rpy="0 0 0"/>
+    </visual>
+    <inertial>
+      <mass value="1.5"/>
+      <origin xyz="0 0 -0.14" rpy="0 0 0"/>
+      <inertia ixx="0.004809374999999999" ixy="0.0" ixz="0.0" iyy="0.004809374999999999" iyz="0.0" izz="0.0015187500000000001"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 -0.14" rpy="0 0 0"/>
+      <material name="color_wnnh">
+        <color rgba="0.3529 0.41176 0.47059 1"/>
+      </material>
+      <geometry>
+        <cylinder radius="0.045" length="0.18"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.14" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.045" length="0.18"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="left_elbow">
+    <visual>
+      <material name="color_j7xv">
+        <color rgba="0.3529 0.41176 0.47059 1"/>
+      </material>
+      <geometry>
+        <sphere radius="0.04"/>
+      </geometry>
+      <origin xyz="0.0 0.0 -0.05249999999999999" rpy="0 0 0"/>
+    </visual>
+    <visual>
+      <material name="color_j7xv">
+        <color rgba="0.3529 0.41176 0.47059 1"/>
+      </material>
+      <geometry>
+        <sphere radius="0.04"/>
+      </geometry>
+      <origin xyz="0.0 0.0 -0.1875" rpy="0 0 0"/>
+    </visual>
+    <inertial>
+      <mass value="1"/>
+      <origin xyz="0 0 -0.12" rpy="0 0 0"/>
+      <inertia ixx="0.0019187499999999999" ixy="0.0" ixz="0.0" iyy="0.0019187499999999999" iyz="0.0" izz="0.0008"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 -0.12" rpy="0 0 0"/>
+      <material name="color_j7xv">
+        <color rgba="0.3529 0.41176 0.47059 1"/>
+      </material>
+      <geometry>
+        <cylinder radius="0.04" length="0.135"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.12" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.04" length="0.135"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="left_wrist">
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.00032" ixy="0" ixz="0" iyy="0.00032" iyz="0" izz="0.00032"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="color_g0fn">
+        <color rgba="0.2529 0.31176 0.37059 1"/>
+      </material>
+      <geometry>
+        <sphere radius="0.04"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.04"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="chest_fakejoint_x" type="revolute">
+    <parent link="root"/>
+    <child link="chest_fakelink_x"/>
+    <origin xyz="0.0 -0.0 0.236151" rpy="0.0 -0.0 0.0"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="66.66666666666667" lower="-1.2" upper="1.2" velocity="1000"/>
+  </joint>
+  <joint name="chest_fakejoint_y" type="revolute">
+    <parent link="chest_fakelink_x"/>
+    <child link="chest_fakelink_y"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="66.66666666666667" lower="-1.2" upper="1.2" velocity="1000"/>
+  </joint>
+  <joint name="chest_joint" type="revolute">
+    <parent link="chest_fakelink_y"/>
+    <child link="chest"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="66.66666666666667" lower="-1.2" upper="1.2" velocity="1000"/>
+  </joint>
+  <link name="chest_fakelink_x">
+    <inertial>
+      <mass value="0.01"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="color_9xuy">
+        <color rgba="0 0 0 0"/>
+      </material>
+      <geometry>
+        <sphere radius="0.0005"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="chest_fakelink_y">
+    <inertial>
+      <mass value="0.01"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="color_41ib">
+        <color rgba="0 0 0 0"/>
+      </material>
+      <geometry>
+        <sphere radius="0.0005"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="neck_fakejoint_x" type="revolute">
+    <parent link="chest"/>
+    <child link="neck_fakelink_x"/>
+    <origin xyz="0.0 -0.0 0.223894" rpy="0.0 -0.0 0.0"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="16.666666666666668" lower="-1" upper="1" velocity="1000"/>
+  </joint>
+  <joint name="neck_fakejoint_y" type="revolute">
+    <parent link="neck_fakelink_x"/>
+    <child link="neck_fakelink_y"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="16.666666666666668" lower="-1" upper="1" velocity="1000"/>
+  </joint>
+  <joint name="neck_joint" type="revolute">
+    <parent link="neck_fakelink_y"/>
+    <child link="neck"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="16.666666666666668" lower="-1" upper="1" velocity="1000"/>
+  </joint>
+  <link name="neck_fakelink_x">
+    <inertial>
+      <mass value="0.01"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="color_5lxo">
+        <color rgba="0 0 0 0"/>
+      </material>
+      <geometry>
+        <sphere radius="0.0005"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="neck_fakelink_y">
+    <inertial>
+      <mass value="0.01"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="color_6qji">
+        <color rgba="0 0 0 0"/>
+      </material>
+      <geometry>
+        <sphere radius="0.0005"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="right_hip_fakejoint_x" type="revolute">
+    <parent link="root"/>
+    <child link="right_hip_fakelink_x"/>
+    <origin xyz="0.0 -0.084887 0.0" rpy="0.0 -0.0 0.0"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="66.66666666666667" lower="-1.2" upper="1.2" velocity="1000"/>
+  </joint>
+  <joint name="right_hip_fakejoint_y" type="revolute">
+    <parent link="right_hip_fakelink_x"/>
+    <child link="right_hip_fakelink_y"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="66.66666666666667" lower="-2.57" upper="1.57" velocity="1000"/>
+  </joint>
+  <joint name="right_hip_joint" type="revolute">
+    <parent link="right_hip_fakelink_y"/>
+    <child link="right_hip"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="66.66666666666667" lower="-1" upper="1" velocity="1000"/>
+  </joint>
+  <link name="right_hip_fakelink_x">
+    <inertial>
+      <mass value="0.01"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="color_oh9s">
+        <color rgba="0 0 0 0"/>
+      </material>
+      <geometry>
+        <sphere radius="0.0005"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="right_hip_fakelink_y">
+    <inertial>
+      <mass value="0.01"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="color_dbdw">
+        <color rgba="0 0 0 0"/>
+      </material>
+      <geometry>
+        <sphere radius="0.0005"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="right_knee_joint" type="revolute">
+    <parent link="right_hip"/>
+    <child link="right_knee"/>
+    <origin xyz="0.0 -0.0 -0.421546" rpy="0.0 -0.0 0.0"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="150" lower="0" upper="3.14" velocity="1000"/>
+  </joint>
+  <joint name="right_ankle_fakejoint_x" type="revolute">
+    <parent link="right_knee"/>
+    <child link="right_ankle_fakelink_x"/>
+    <origin xyz="0.0 -0.0 -0.40987" rpy="0.0 -0.0 0.0"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="30.0" lower="-1" upper="1" velocity="1000"/>
+  </joint>
+  <joint name="right_ankle_fakejoint_y" type="revolute">
+    <parent link="right_ankle_fakelink_x"/>
+    <child link="right_ankle_fakelink_y"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="30.0" lower="-1.57" upper="1.57" velocity="1000"/>
+  </joint>
+  <joint name="right_ankle_joint" type="revolute">
+    <parent link="right_ankle_fakelink_y"/>
+    <child link="right_ankle"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="30.0" lower="-1" upper="1" velocity="1000"/>
+  </joint>
+  <link name="right_ankle_fakelink_x">
+    <inertial>
+      <mass value="0.01"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="color_9t84">
+        <color rgba="0 0 0 0"/>
+      </material>
+      <geometry>
+        <sphere radius="0.0005"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="right_ankle_fakelink_y">
+    <inertial>
+      <mass value="0.01"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="color_azyt">
+        <color rgba="0 0 0 0"/>
+      </material>
+      <geometry>
+        <sphere radius="0.0005"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="right_shoulder_fakejoint_x" type="revolute">
+    <parent link="chest"/>
+    <child link="right_shoulder_fakelink_x"/>
+    <origin xyz="-0.02405 -0.18311 0.2435" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="33.333333333333336" lower="-3.14" upper="0.5" velocity="1000"/>
+  </joint>
+  <joint name="right_shoulder_fakejoint_y" type="revolute">
+    <parent link="right_shoulder_fakelink_x"/>
+    <child link="right_shoulder_fakelink_y"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="33.333333333333336" lower="-3.14" upper="0.7" velocity="1000"/>
+  </joint>
+  <joint name="right_shoulder_joint" type="revolute">
+    <parent link="right_shoulder_fakelink_y"/>
+    <child link="right_shoulder"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="33.333333333333336" lower="-1.5" upper="1.5" velocity="1000"/>
+  </joint>
+  <link name="right_shoulder_fakelink_x">
+    <inertial>
+      <mass value="0.01"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="color_q85j">
+        <color rgba="0 0 0 0"/>
+      </material>
+      <geometry>
+        <sphere radius="0.0005"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="right_shoulder_fakelink_y">
+    <inertial>
+      <mass value="0.01"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="color_sg65">
+        <color rgba="0 0 0 0"/>
+      </material>
+      <geometry>
+        <sphere radius="0.0005"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="right_elbow_joint" type="revolute">
+    <parent link="right_shoulder"/>
+    <child link="right_elbow"/>
+    <origin xyz="0.0 -0.0 -0.274788" rpy="0.0 -0.0 0.0"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="60" lower="-3.14" upper="0" velocity="1000"/>
+  </joint>
+  <joint name="right_wrist_joint" type="fixed">
+    <parent link="right_elbow"/>
+    <child link="right_wrist"/>
+    <origin xyz="0.0 -0.0 -0.258947" rpy="0.0 -0.0 0.0"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="0" lower="1.0" upper="0.0" velocity="1000"/>
+  </joint>
+  <joint name="left_hip_fakejoint_x" type="revolute">
+    <parent link="root"/>
+    <child link="left_hip_fakelink_x"/>
+    <origin xyz="0.0 0.084887 0.0" rpy="0.0 -0.0 0.0"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="66.66666666666667" lower="-1.2" upper="1.2" velocity="1000"/>
+  </joint>
+  <joint name="left_hip_fakejoint_y" type="revolute">
+    <parent link="left_hip_fakelink_x"/>
+    <child link="left_hip_fakelink_y"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="66.66666666666667" lower="-2.57" upper="1.57" velocity="1000"/>
+  </joint>
+  <joint name="left_hip_joint" type="revolute">
+    <parent link="left_hip_fakelink_y"/>
+    <child link="left_hip"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="66.66666666666667" lower="-1" upper="1" velocity="1000"/>
+  </joint>
+  <link name="left_hip_fakelink_x">
+    <inertial>
+      <mass value="0.01"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="color_1t2t">
+        <color rgba="0 0 0 0"/>
+      </material>
+      <geometry>
+        <sphere radius="0.0005"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="left_hip_fakelink_y">
+    <inertial>
+      <mass value="0.01"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="color_ala7">
+        <color rgba="0 0 0 0"/>
+      </material>
+      <geometry>
+        <sphere radius="0.0005"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="left_knee_joint" type="revolute">
+    <parent link="left_hip"/>
+    <child link="left_knee"/>
+    <origin xyz="0.0 -0.0 -0.421546" rpy="0.0 -0.0 0.0"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="150" lower="0" upper="3.14" velocity="1000"/>
+  </joint>
+  <joint name="left_ankle_fakejoint_x" type="revolute">
+    <parent link="left_knee"/>
+    <child link="left_ankle_fakelink_x"/>
+    <origin xyz="0.0 -0.0 -0.40987" rpy="0.0 -0.0 0.0"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="30.0" lower="-1" upper="1" velocity="1000"/>
+  </joint>
+  <joint name="left_ankle_fakejoint_y" type="revolute">
+    <parent link="left_ankle_fakelink_x"/>
+    <child link="left_ankle_fakelink_y"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="30.0" lower="-1.57" upper="1.57" velocity="1000"/>
+  </joint>
+  <joint name="left_ankle_joint" type="revolute">
+    <parent link="left_ankle_fakelink_y"/>
+    <child link="left_ankle"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="30.0" lower="-1" upper="1" velocity="1000"/>
+  </joint>
+  <link name="left_ankle_fakelink_x">
+    <inertial>
+      <mass value="0.01"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="color_58dr">
+        <color rgba="0 0 0 0"/>
+      </material>
+      <geometry>
+        <sphere radius="0.0005"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="left_ankle_fakelink_y">
+    <inertial>
+      <mass value="0.01"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="color_c11e">
+        <color rgba="0 0 0 0"/>
+      </material>
+      <geometry>
+        <sphere radius="0.0005"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="left_shoulder_fakejoint_x" type="revolute">
+    <parent link="chest"/>
+    <child link="left_shoulder_fakelink_x"/>
+    <origin xyz="-0.02405 0.18311 0.2435" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="33.333333333333336" lower="-0.5" upper="3.14" velocity="1000"/>
+  </joint>
+  <joint name="left_shoulder_fakejoint_y" type="revolute">
+    <parent link="left_shoulder_fakelink_x"/>
+    <child link="left_shoulder_fakelink_y"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="33.333333333333336" lower="-3.14" upper="0.7" velocity="1000"/>
+  </joint>
+  <joint name="left_shoulder_joint" type="revolute">
+    <parent link="left_shoulder_fakelink_y"/>
+    <child link="left_shoulder"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="33.333333333333336" lower="-1.5" upper="1.5" velocity="1000"/>
+  </joint>
+  <link name="left_shoulder_fakelink_x">
+    <inertial>
+      <mass value="0.01"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="color_pht0">
+        <color rgba="0 0 0 0"/>
+      </material>
+      <geometry>
+        <sphere radius="0.0005"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="left_shoulder_fakelink_y">
+    <inertial>
+      <mass value="0.01"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="color_hl9x">
+        <color rgba="0 0 0 0"/>
+      </material>
+      <geometry>
+        <sphere radius="0.0005"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="left_elbow_joint" type="revolute">
+    <parent link="left_shoulder"/>
+    <child link="left_elbow"/>
+    <origin xyz="0.0 -0.0 -0.274788" rpy="0.0 -0.0 0.0"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="60" lower="-3.14" upper="0" velocity="1000"/>
+  </joint>
+  <joint name="left_wrist_joint" type="fixed">
+    <parent link="left_elbow"/>
+    <child link="left_wrist"/>
+    <origin xyz="0.0 -0.0 -0.258947" rpy="0.0 -0.0 0.0"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="0" lower="1.0" upper="0.0" velocity="1000"/>
+  </joint>
+</robot>

@@ -59,8 +59,6 @@ class Animator:
 
         rospy.loginfo("Loaded file %s with %i Frames" % (path, self.num_frames))
 
-        self.current_file_index += 1
-
     def quat_to_euler(self, w,x,y,z):
         q = []
         if w < 0:
@@ -68,7 +66,7 @@ class Animator:
         else:
             q = [x, y, z, w]
         (r,p,y) = euler_from_quaternion(q, axes='rxyz')
-        return [r,p,y]
+        return [-p,y,r]
 
     def get(self):
         return [
@@ -136,34 +134,34 @@ class Animator:
         left_elbow_rotation = frame[43]
         
         s.name = [
-            "root_chest_joint1",
-            "root_chest_joint2",
-            "root_chest_joint3",
-            "chest_neck_joint1",
-            "chest_neck_joint2",
-            "chest_neck_joint3",
-            "root_right_hip_joint1",
-            "root_right_hip_joint2",
-            "root_right_hip_joint3",
-            "right_knee",
-            "right_knee_right_ankle_joint1",
-            "right_knee_right_ankle_joint2",
-            "right_knee_right_ankle_joint3",
-            "chest_right_shoulder_joint1",
-            "chest_right_shoulder_joint2",
-            "chest_right_shoulder_joint3",
-            "right_elbow",
-            "root_left_hip_joint1",
-            "root_left_hip_joint2",
-            "root_left_hip_joint3",
-            "left_knee",
-            "left_knee_left_ankle_joint1",
-            "left_knee_left_ankle_joint2",
-            "left_knee_left_ankle_joint3",
-            "chest_left_shoulder_joint1",
-            "chest_left_shoulder_joint2",
-            "chest_left_shoulder_joint3",
-            "left_elbow"
+            "chest_fakejoint_x",
+            "chest_fakejoint_y",
+            "chest_joint",
+            "neck_fakejoint_x",
+            "neck_fakejoint_y",
+            "neck_joint",
+            "right_hip_fakejoint_x",
+            "right_hip_fakejoint_y",
+            "right_hip_joint",
+            "right_knee_joint",
+            "right_ankle_fakejoint_x",
+            "right_ankle_fakejoint_y",
+            "right_ankle_joint",
+            "right_shoulder_fakejoint_x",
+            "right_shoulder_fakejoint_y",
+            "right_shoulder_joint",
+            "right_elbow_joint",
+            "left_hip_fakejoint_x",
+            "left_hip_fakejoint_y",
+            "left_hip_joint",
+            "left_knee_joint",
+            "left_ankle_fakejoint_x",
+            "left_ankle_fakejoint_y",
+            "left_ankle_joint",
+            "left_shoulder_fakejoint_x",
+            "left_shoulder_fakejoint_y",
+            "left_shoulder_joint",
+            "left_elbow_joint"
         ]
 
         s.position = [
@@ -203,13 +201,13 @@ class Animator:
         t = TransformStamped()
         t.header.stamp = rospy.Time.now()
         t.header.frame_id = "map"
-        t.child_frame_id = "base_link"
+        t.child_frame_id = "root"
         t.transform.translation.x = frame[1]
         t.transform.translation.y = -frame[3]
         t.transform.translation.z = frame[2]
         t.transform.rotation.w = frame[4]
         t.transform.rotation.x = frame[5]
-        t.transform.rotation.y = -frame[7]
+        t.transform.rotation.y = frame[7]
         t.transform.rotation.z = frame[6]
         return t
 
@@ -273,7 +271,7 @@ class Animator:
                     stop = True
 
             if self.file_count - 1 > self.current_file_index:
-                self.current_file_index += 1
+                self.current_file_index += 0
                 self.load_next_json()
                 counter = 0
                 stop = False
