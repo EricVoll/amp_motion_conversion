@@ -66,7 +66,8 @@ class Animator:
         else:
             q = [x, y, z, w]
         (r,p,y) = euler_from_quaternion(q, axes='rxyz')
-        return [-p,y,r]
+        # return [r,p,y+math.pi]
+        return [-r,p,y]
 
     def get(self):
         return [
@@ -207,7 +208,7 @@ class Animator:
         t.transform.translation.z = frame[2]
         t.transform.rotation.w = frame[4]
         t.transform.rotation.x = frame[5]
-        t.transform.rotation.y = frame[7]
+        t.transform.rotation.y = -frame[7]
         t.transform.rotation.z = frame[6]
         return t
 
