@@ -1,0 +1,13 @@
+<launch>
+  <arg name="gui" default="True" />
+  
+  <param name="use_gui" value="$(arg gui)"/>
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" ></node>
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+
+
+  <arg name="rvizconfig" default="$(find amp_motion_conversion)/cfg/rviz.rviz" />
+  <param name="robot_description" textfile="$(find amp_motion_conversion)/urdf/humanoid.urdf"/>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true"  />
+
+</launch>
