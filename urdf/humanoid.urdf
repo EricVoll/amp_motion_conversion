@@ -67,8 +67,8 @@
   </joint>
   <link name="root_chest_link1">
     <inertial>
-      <mass value="1e-09"/>
-      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+      <mass value="1e-02"/>
+      <inertia ixx="1e-02" ixy="0" ixz="0" iyy="1e-02" iyz="0" izz="1e-02"/>
     </inertial>
   </link>
   <joint name="root_chest_joint2" type="continuous">
@@ -78,8 +78,8 @@
   </joint>
   <link name="root_chest_link2">
     <inertial>
-      <mass value="1e-09"/>
-      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+      <mass value="1e-02"/>
+      <inertia ixx="1e-02" ixy="0" ixz="0" iyy="1e-02" iyz="0" izz="1e-02"/>
     </inertial>
     <visual>
       <geometry>
@@ -90,18 +90,8 @@
   </link>
   <joint name="root_chest_joint3" type="continuous">
     <parent link="root_chest_link2"/>
-    <child link="root_chest_link3"/>
-    <axis xyz="0 0 1"/>
-  </joint>
-  <link name="root_chest_link3">
-    <inertial>
-      <mass value="1e-09"/>
-      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
-    </inertial>
-  </link>
-  <joint name="root_chest_joint4" type="fixed">
-    <parent link="root_chest_link3"/>
     <child link="chest"/>
+    <axis xyz="0 0 1"/>
   </joint>
   <link name="neck">
     <inertial>
@@ -130,8 +120,8 @@
   </joint>
   <link name="chest_neck_link1">
     <inertial>
-      <mass value="1e-09"/>
-      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+      <mass value="1e-02"/>
+      <inertia ixx="1e-02" ixy="0" ixz="0" iyy="1e-02" iyz="0" izz="1e-02"/>
     </inertial>
   </link>
   <joint name="chest_neck_joint2" type="continuous">
@@ -141,8 +131,8 @@
   </joint>
   <link name="chest_neck_link2">
     <inertial>
-      <mass value="1e-09"/>
-      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+      <mass value="1e-02"/>
+      <inertia ixx="1e-02" ixy="0" ixz="0" iyy="1e-02" iyz="0" izz="1e-02"/>
     </inertial>
     <visual>
       <geometry>
@@ -153,18 +143,8 @@
   </link>
   <joint name="chest_neck_joint3" type="continuous">
     <parent link="chest_neck_link2"/>
-    <child link="chest_neck_link3"/>
-    <axis xyz="0 0 1"/>
-  </joint>
-  <link name="chest_neck_link3">
-    <inertial>
-      <mass value="1e-09"/>
-      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
-    </inertial>
-  </link>
-  <joint name="chest_neck_joint4" type="fixed">
-    <parent link="chest_neck_link3"/>
     <child link="neck"/>
+    <axis xyz="0 0 1"/>
   </joint>
   <link name="right_hip">
     <inertial>
@@ -193,8 +173,8 @@
   </joint>
   <link name="root_right_hip_link1">
     <inertial>
-      <mass value="1e-09"/>
-      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+      <mass value="1e-02"/>
+      <inertia ixx="1e-02" ixy="0" ixz="0" iyy="1e-02" iyz="0" izz="1e-02"/>
     </inertial>
   </link>
   <joint name="root_right_hip_joint2" type="continuous">
@@ -204,8 +184,8 @@
   </joint>
   <link name="root_right_hip_link2">
     <inertial>
-      <mass value="1e-09"/>
-      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+      <mass value="1e-02"/>
+      <inertia ixx="1e-02" ixy="0" ixz="0" iyy="1e-02" iyz="0" izz="1e-02"/>
     </inertial>
     <visual>
       <geometry>
@@ -216,18 +196,8 @@
   </link>
   <joint name="root_right_hip_joint3" type="continuous">
     <parent link="root_right_hip_link2"/>
-    <child link="root_right_hip_link3"/>
-    <axis xyz="0 0 1"/>
-  </joint>
-  <link name="root_right_hip_link3">
-    <inertial>
-      <mass value="1e-09"/>
-      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
-    </inertial>
-  </link>
-  <joint name="root_right_hip_joint4" type="fixed">
-    <parent link="root_right_hip_link3"/>
     <child link="right_hip"/>
+    <axis xyz="0 0 1"/>
   </joint>
   <link name="right_knee">
     <inertial>
@@ -282,8 +252,8 @@
   </joint>
   <link name="right_knee_right_ankle_link1">
     <inertial>
-      <mass value="1e-09"/>
-      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+      <mass value="1e-02"/>
+      <inertia ixx="1e-02" ixy="0" ixz="0" iyy="1e-02" iyz="0" izz="1e-02"/>
     </inertial>
   </link>
   <joint name="right_knee_right_ankle_joint2" type="continuous">
@@ -293,8 +263,8 @@
   </joint>
   <link name="right_knee_right_ankle_link2">
     <inertial>
-      <mass value="1e-09"/>
-      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+      <mass value="1e-02"/>
+      <inertia ixx="1e-02" ixy="0" ixz="0" iyy="1e-02" iyz="0" izz="1e-02"/>
     </inertial>
     <visual>
       <geometry>
@@ -305,18 +275,8 @@
   </link>
   <joint name="right_knee_right_ankle_joint3" type="continuous">
     <parent link="right_knee_right_ankle_link2"/>
-    <child link="right_knee_right_ankle_link3"/>
-    <axis xyz="0 0 1"/>
-  </joint>
-  <link name="right_knee_right_ankle_link3">
-    <inertial>
-      <mass value="1e-09"/>
-      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
-    </inertial>
-  </link>
-  <joint name="right_knee_right_ankle_joint4" type="fixed">
-    <parent link="right_knee_right_ankle_link3"/>
     <child link="right_ankle"/>
+    <axis xyz="0 0 1"/>
   </joint>
   <link name="right_shoulder">
     <inertial>
@@ -345,8 +305,8 @@
   </joint>
   <link name="chest_right_shoulder_link1">
     <inertial>
-      <mass value="1e-09"/>
-      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+      <mass value="1e-02"/>
+      <inertia ixx="1e-02" ixy="0" ixz="0" iyy="1e-02" iyz="0" izz="1e-02"/>
     </inertial>
   </link>
   <joint name="chest_right_shoulder_joint2" type="continuous">
@@ -356,8 +316,8 @@
   </joint>
   <link name="chest_right_shoulder_link2">
     <inertial>
-      <mass value="1e-09"/>
-      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+      <mass value="1e-02"/>
+      <inertia ixx="1e-02" ixy="0" ixz="0" iyy="1e-02" iyz="0" izz="1e-02"/>
     </inertial>
     <visual>
       <geometry>
@@ -368,18 +328,8 @@
   </link>
   <joint name="chest_right_shoulder_joint3" type="continuous">
     <parent link="chest_right_shoulder_link2"/>
-    <child link="chest_right_shoulder_link3"/>
-    <axis xyz="0 0 1"/>
-  </joint>
-  <link name="chest_right_shoulder_link3">
-    <inertial>
-      <mass value="1e-09"/>
-      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
-    </inertial>
-  </link>
-  <joint name="chest_right_shoulder_joint4" type="fixed">
-    <parent link="chest_right_shoulder_link3"/>
     <child link="right_shoulder"/>
+    <axis xyz="0 0 1"/>
   </joint>
   <link name="right_elbow">
     <inertial>
@@ -458,8 +408,8 @@
   </joint>
   <link name="root_left_hip_link1">
     <inertial>
-      <mass value="1e-09"/>
-      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+      <mass value="1e-02"/>
+      <inertia ixx="1e-02" ixy="0" ixz="0" iyy="1e-02" iyz="0" izz="1e-02"/>
     </inertial>
   </link>
   <joint name="root_left_hip_joint2" type="continuous">
@@ -469,8 +419,8 @@
   </joint>
   <link name="root_left_hip_link2">
     <inertial>
-      <mass value="1e-09"/>
-      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+      <mass value="1e-02"/>
+      <inertia ixx="1e-02" ixy="0" ixz="0" iyy="1e-02" iyz="0" izz="1e-02"/>
     </inertial>
     <visual>
       <geometry>
@@ -481,18 +431,8 @@
   </link>
   <joint name="root_left_hip_joint3" type="continuous">
     <parent link="root_left_hip_link2"/>
-    <child link="root_left_hip_link3"/>
-    <axis xyz="0 0 1"/>
-  </joint>
-  <link name="root_left_hip_link3">
-    <inertial>
-      <mass value="1e-09"/>
-      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
-    </inertial>
-  </link>
-  <joint name="root_left_hip_joint4" type="fixed">
-    <parent link="root_left_hip_link3"/>
     <child link="left_hip"/>
+    <axis xyz="0 0 1"/>
   </joint>
   <link name="left_knee">
     <inertial>
@@ -547,8 +487,8 @@
   </joint>
   <link name="left_knee_left_ankle_link1">
     <inertial>
-      <mass value="1e-09"/>
-      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+      <mass value="1e-02"/>
+      <inertia ixx="1e-02" ixy="0" ixz="0" iyy="1e-02" iyz="0" izz="1e-02"/>
     </inertial>
   </link>
   <joint name="left_knee_left_ankle_joint2" type="continuous">
@@ -558,8 +498,8 @@
   </joint>
   <link name="left_knee_left_ankle_link2">
     <inertial>
-      <mass value="1e-09"/>
-      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+      <mass value="1e-02"/>
+      <inertia ixx="1e-02" ixy="0" ixz="0" iyy="1e-02" iyz="0" izz="1e-02"/>
     </inertial>
     <visual>
       <geometry>
@@ -570,18 +510,8 @@
   </link>
   <joint name="left_knee_left_ankle_joint3" type="continuous">
     <parent link="left_knee_left_ankle_link2"/>
-    <child link="left_knee_left_ankle_link3"/>
-    <axis xyz="0 0 1"/>
-  </joint>
-  <link name="left_knee_left_ankle_link3">
-    <inertial>
-      <mass value="1e-09"/>
-      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
-    </inertial>
-  </link>
-  <joint name="left_knee_left_ankle_joint4" type="fixed">
-    <parent link="left_knee_left_ankle_link3"/>
     <child link="left_ankle"/>
+    <axis xyz="0 0 1"/>
   </joint>
   <link name="left_shoulder">
     <inertial>
@@ -610,8 +540,8 @@
   </joint>
   <link name="chest_left_shoulder_link1">
     <inertial>
-      <mass value="1e-09"/>
-      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+      <mass value="1e-02"/>
+      <inertia ixx="1e-02" ixy="0" ixz="0" iyy="1e-02" iyz="0" izz="1e-02"/>
     </inertial>
   </link>
   <joint name="chest_left_shoulder_joint2" type="continuous">
@@ -621,8 +551,8 @@
   </joint>
   <link name="chest_left_shoulder_link2">
     <inertial>
-      <mass value="1e-09"/>
-      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+      <mass value="1e-02"/>
+      <inertia ixx="1e-02" ixy="0" ixz="0" iyy="1e-02" iyz="0" izz="1e-02"/>
     </inertial>
     <visual>
       <geometry>
@@ -633,18 +563,8 @@
   </link>
   <joint name="chest_left_shoulder_joint3" type="continuous">
     <parent link="chest_left_shoulder_link2"/>
-    <child link="chest_left_shoulder_link3"/>
-    <axis xyz="0 0 1"/>
-  </joint>
-  <link name="chest_left_shoulder_link3">
-    <inertial>
-      <mass value="1e-09"/>
-      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
-    </inertial>
-  </link>
-  <joint name="chest_left_shoulder_joint4" type="fixed">
-    <parent link="chest_left_shoulder_link3"/>
     <child link="left_shoulder"/>
+    <axis xyz="0 0 1"/>
   </joint>
   <link name="left_elbow">
     <inertial>
