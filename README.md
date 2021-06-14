@@ -15,7 +15,7 @@ $ roslaunch amp_motion_conversion show.launch
 ```
 
 The default launch file will open rviz, play one of the provided motions and then store the motion as a json.
-The xacro and urdf of the humanoid are in `/amp_motion_conversion/urdf`
+The xacro and urdf of the humanoid are in `/amp_motion_conversion/urdf`. To build a new urdf file from the xacro file simply cd into the xacro file's folder and do `rosrun xacro xacro humanoid.xacro > humanoid.urdf`
 
 AMP motion data in Rviz
 ![image](https://user-images.githubusercontent.com/28082576/120357868-3026c780-c306-11eb-83e3-12628830cafe.png)
