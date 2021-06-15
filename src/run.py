@@ -130,8 +130,6 @@ class Animator:
 
         arr.extend(list(frame[8:None]))
 
-        print(len(arr))
-
         self.obj['converted'].append(arr)
 
     def store_current(self):
@@ -143,7 +141,7 @@ class Animator:
         with open(self.obj['save_path'], "w") as f:
             f.write(json_string)
         
-        print("Saving to %s" % self.obj['save_path'])
+        #print("Saving to %s" % self.obj['save_path'])
 
     def process_frame(self, t):
 
