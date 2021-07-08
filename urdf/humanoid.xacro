@@ -19,7 +19,7 @@
     <parent link="${parent}"/>
     <child link="${parent}_${child}_link1"/>
     <axis xyz="1 0 0" />
-	<limit effort="${effort_limit}" lower="${limit}" upper="${limit}"/>
+	<limit effort="${effort_limit}" lower="${-limit}" upper="${limit}"/>
   </joint>
 
   <link name="${parent}_${child}_link2">
@@ -40,7 +40,7 @@
     <parent link="${parent}_${child}_link1"/>
     <child link="${parent}_${child}_link2"/>
     <axis xyz="0 1 0" />
-	<limit effort="${effort_limit}" lower="${limit}" upper="${limit}"/>
+	<limit effort="${effort_limit}" lower="${-limit}" upper="${limit}"/>
   </joint>
 
 
@@ -48,7 +48,7 @@
     <parent link="${parent}_${child}_link2"/>
     <child link="${child}"/>
     <axis xyz="0 0 1" />
-	<limit effort="${effort_limit}" lower="${limit}" upper="${limit}"/>
+	<limit effort="${effort_limit}" lower="${-limit}" upper="${limit}"/>
   </joint>
 
 </xacro:macro>
