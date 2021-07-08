@@ -169,7 +169,7 @@ class Animator:
                     self.store_current()
                     stop = True
 
-            if self.file_count - 1 > self.current_file_index:
+            if self.file_count> self.current_file_index:
                 self.load_next_json()
                 counter = 0
                 stop = False
