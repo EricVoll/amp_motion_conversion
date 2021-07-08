@@ -7,13 +7,6 @@
 
 <xacro:macro name="ball_joint" params="parent child *origin">
 
-  <joint name="${parent}_${child}_joint1" type="continuous">
-	<xacro:insert_block name="origin"/>
-    <parent link="${parent}"/>
-    <child link="${parent}_${child}_link1"/>
-    <axis xyz="1 0 0" />
-  </joint>
-
   <link name="${parent}_${child}_link1">
     <inertial>
       <mass value="1e-02" />
@@ -21,10 +14,11 @@
     </inertial>
   </link>
 
-  <joint name="${parent}_${child}_joint2" type="continuous">
-    <parent link="${parent}_${child}_link1"/>
-    <child link="${parent}_${child}_link2"/>
-    <axis xyz="0 1 0" />
+  <joint name="${parent}_${child}_joint1" type="continuous">
+	<xacro:insert_block name="origin"/>
+    <parent link="${parent}"/>
+    <child link="${parent}_${child}_link1"/>
+    <axis xyz="1 0 0" />
   </joint>
 
   <link name="${parent}_${child}_link2">
@@ -40,12 +34,20 @@
 		<material name="orange"/>
 	</visual>  
   </link>
+  
+  <joint name="${parent}_${child}_joint2" type="continuous">
+    <parent link="${parent}_${child}_link1"/>
+    <child link="${parent}_${child}_link2"/>
+    <axis xyz="0 1 0" />
+  </joint>
+
 
   <joint name="${parent}_${child}_joint3" type="continuous">
     <parent link="${parent}_${child}_link2"/>
     <child link="${child}"/>
     <axis xyz="0 0 1" />
   </joint>
+
 </xacro:macro>
 
 <xacro:macro name="sphere_v_c" params="radius *origin">

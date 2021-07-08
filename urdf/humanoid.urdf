@@ -59,22 +59,17 @@
       </geometry>
     </visual>
   </link>
-  <joint name="root_chest_joint1" type="continuous">
-    <origin rpy="0 0 0" xyz="0.000000 0.236151 0.000000"/>
-    <parent link="root"/>
-    <child link="root_chest_link1"/>
-    <axis xyz="1 0 0"/>
-  </joint>
   <link name="root_chest_link1">
     <inertial>
       <mass value="1e-02"/>
       <inertia ixx="1e-02" ixy="0" ixz="0" iyy="1e-02" iyz="0" izz="1e-02"/>
     </inertial>
   </link>
-  <joint name="root_chest_joint2" type="continuous">
-    <parent link="root_chest_link1"/>
-    <child link="root_chest_link2"/>
-    <axis xyz="0 1 0"/>
+  <joint name="root_chest_joint1" type="continuous">
+    <origin rpy="0 0 0" xyz="0.000000 0.236151 0.000000"/>
+    <parent link="root"/>
+    <child link="root_chest_link1"/>
+    <axis xyz="1 0 0"/>
   </joint>
   <link name="root_chest_link2">
     <inertial>
@@ -88,6 +83,11 @@
       <material name="orange"/>
     </visual>
   </link>
+  <joint name="root_chest_joint2" type="continuous">
+    <parent link="root_chest_link1"/>
+    <child link="root_chest_link2"/>
+    <axis xyz="0 1 0"/>
+  </joint>
   <joint name="root_chest_joint3" type="continuous">
     <parent link="root_chest_link2"/>
     <child link="chest"/>
@@ -112,22 +112,17 @@
       </geometry>
     </visual>
   </link>
-  <joint name="chest_neck_joint1" type="continuous">
-    <origin rpy="0 0 0" xyz="0.000000 0.223894 0.000000"/>
-    <parent link="chest"/>
-    <child link="chest_neck_link1"/>
-    <axis xyz="1 0 0"/>
-  </joint>
   <link name="chest_neck_link1">
     <inertial>
       <mass value="1e-02"/>
       <inertia ixx="1e-02" ixy="0" ixz="0" iyy="1e-02" iyz="0" izz="1e-02"/>
     </inertial>
   </link>
-  <joint name="chest_neck_joint2" type="continuous">
-    <parent link="chest_neck_link1"/>
-    <child link="chest_neck_link2"/>
-    <axis xyz="0 1 0"/>
+  <joint name="chest_neck_joint1" type="continuous">
+    <origin rpy="0 0 0" xyz="0.000000 0.223894 0.000000"/>
+    <parent link="chest"/>
+    <child link="chest_neck_link1"/>
+    <axis xyz="1 0 0"/>
   </joint>
   <link name="chest_neck_link2">
     <inertial>
@@ -141,6 +136,11 @@
       <material name="orange"/>
     </visual>
   </link>
+  <joint name="chest_neck_joint2" type="continuous">
+    <parent link="chest_neck_link1"/>
+    <child link="chest_neck_link2"/>
+    <axis xyz="0 1 0"/>
+  </joint>
   <joint name="chest_neck_joint3" type="continuous">
     <parent link="chest_neck_link2"/>
     <child link="neck"/>
@@ -165,22 +165,17 @@
       </geometry>
     </visual>
   </link>
-  <joint name="root_right_hip_joint1" type="continuous">
-    <origin rpy="0 0 0" xyz="0.000000 0.000000 0.084887"/>
-    <parent link="root"/>
-    <child link="root_right_hip_link1"/>
-    <axis xyz="1 0 0"/>
-  </joint>
   <link name="root_right_hip_link1">
     <inertial>
       <mass value="1e-02"/>
       <inertia ixx="1e-02" ixy="0" ixz="0" iyy="1e-02" iyz="0" izz="1e-02"/>
     </inertial>
   </link>
-  <joint name="root_right_hip_joint2" type="continuous">
-    <parent link="root_right_hip_link1"/>
-    <child link="root_right_hip_link2"/>
-    <axis xyz="0 1 0"/>
+  <joint name="root_right_hip_joint1" type="continuous">
+    <origin rpy="0 0 0" xyz="0.000000 0.000000 0.084887"/>
+    <parent link="root"/>
+    <child link="root_right_hip_link1"/>
+    <axis xyz="1 0 0"/>
   </joint>
   <link name="root_right_hip_link2">
     <inertial>
@@ -194,6 +189,11 @@
       <material name="orange"/>
     </visual>
   </link>
+  <joint name="root_right_hip_joint2" type="continuous">
+    <parent link="root_right_hip_link1"/>
+    <child link="root_right_hip_link2"/>
+    <axis xyz="0 1 0"/>
+  </joint>
   <joint name="root_right_hip_joint3" type="continuous">
     <parent link="root_right_hip_link2"/>
     <child link="right_hip"/>
@@ -244,22 +244,17 @@
       </geometry>
     </visual>
   </link>
-  <joint name="right_knee_right_ankle_joint1" type="continuous">
-    <origin rpy="0 0 0" xyz="0.000000 -0.409870 0.000000"/>
-    <parent link="right_knee"/>
-    <child link="right_knee_right_ankle_link1"/>
-    <axis xyz="1 0 0"/>
-  </joint>
   <link name="right_knee_right_ankle_link1">
     <inertial>
       <mass value="1e-02"/>
       <inertia ixx="1e-02" ixy="0" ixz="0" iyy="1e-02" iyz="0" izz="1e-02"/>
     </inertial>
   </link>
-  <joint name="right_knee_right_ankle_joint2" type="continuous">
-    <parent link="right_knee_right_ankle_link1"/>
-    <child link="right_knee_right_ankle_link2"/>
-    <axis xyz="0 1 0"/>
+  <joint name="right_knee_right_ankle_joint1" type="continuous">
+    <origin rpy="0 0 0" xyz="0.000000 -0.409870 0.000000"/>
+    <parent link="right_knee"/>
+    <child link="right_knee_right_ankle_link1"/>
+    <axis xyz="1 0 0"/>
   </joint>
   <link name="right_knee_right_ankle_link2">
     <inertial>
@@ -273,6 +268,11 @@
       <material name="orange"/>
     </visual>
   </link>
+  <joint name="right_knee_right_ankle_joint2" type="continuous">
+    <parent link="right_knee_right_ankle_link1"/>
+    <child link="right_knee_right_ankle_link2"/>
+    <axis xyz="0 1 0"/>
+  </joint>
   <joint name="right_knee_right_ankle_joint3" type="continuous">
     <parent link="right_knee_right_ankle_link2"/>
     <child link="right_ankle"/>
@@ -297,22 +297,17 @@
       </geometry>
     </visual>
   </link>
-  <joint name="chest_right_shoulder_joint1" type="continuous">
-    <origin rpy="0 0 0" xyz="-0.02406 0.24350 0.18311"/>
-    <parent link="chest"/>
-    <child link="chest_right_shoulder_link1"/>
-    <axis xyz="1 0 0"/>
-  </joint>
   <link name="chest_right_shoulder_link1">
     <inertial>
       <mass value="1e-02"/>
       <inertia ixx="1e-02" ixy="0" ixz="0" iyy="1e-02" iyz="0" izz="1e-02"/>
     </inertial>
   </link>
-  <joint name="chest_right_shoulder_joint2" type="continuous">
-    <parent link="chest_right_shoulder_link1"/>
-    <child link="chest_right_shoulder_link2"/>
-    <axis xyz="0 1 0"/>
+  <joint name="chest_right_shoulder_joint1" type="continuous">
+    <origin rpy="0 0 0" xyz="-0.02406 0.24350 0.18311"/>
+    <parent link="chest"/>
+    <child link="chest_right_shoulder_link1"/>
+    <axis xyz="1 0 0"/>
   </joint>
   <link name="chest_right_shoulder_link2">
     <inertial>
@@ -326,6 +321,11 @@
       <material name="orange"/>
     </visual>
   </link>
+  <joint name="chest_right_shoulder_joint2" type="continuous">
+    <parent link="chest_right_shoulder_link1"/>
+    <child link="chest_right_shoulder_link2"/>
+    <axis xyz="0 1 0"/>
+  </joint>
   <joint name="chest_right_shoulder_joint3" type="continuous">
     <parent link="chest_right_shoulder_link2"/>
     <child link="right_shoulder"/>
@@ -400,22 +400,17 @@
       </geometry>
     </visual>
   </link>
-  <joint name="root_left_hip_joint1" type="continuous">
-    <origin rpy="0 0 0" xyz="0.000000 0.000000 -0.084887"/>
-    <parent link="root"/>
-    <child link="root_left_hip_link1"/>
-    <axis xyz="1 0 0"/>
-  </joint>
   <link name="root_left_hip_link1">
     <inertial>
       <mass value="1e-02"/>
       <inertia ixx="1e-02" ixy="0" ixz="0" iyy="1e-02" iyz="0" izz="1e-02"/>
     </inertial>
   </link>
-  <joint name="root_left_hip_joint2" type="continuous">
-    <parent link="root_left_hip_link1"/>
-    <child link="root_left_hip_link2"/>
-    <axis xyz="0 1 0"/>
+  <joint name="root_left_hip_joint1" type="continuous">
+    <origin rpy="0 0 0" xyz="0.000000 0.000000 -0.084887"/>
+    <parent link="root"/>
+    <child link="root_left_hip_link1"/>
+    <axis xyz="1 0 0"/>
   </joint>
   <link name="root_left_hip_link2">
     <inertial>
@@ -429,6 +424,11 @@
       <material name="orange"/>
     </visual>
   </link>
+  <joint name="root_left_hip_joint2" type="continuous">
+    <parent link="root_left_hip_link1"/>
+    <child link="root_left_hip_link2"/>
+    <axis xyz="0 1 0"/>
+  </joint>
   <joint name="root_left_hip_joint3" type="continuous">
     <parent link="root_left_hip_link2"/>
     <child link="left_hip"/>
@@ -479,22 +479,17 @@
       </geometry>
     </visual>
   </link>
-  <joint name="left_knee_left_ankle_joint1" type="continuous">
-    <origin rpy="0 0 0" xyz="0.000000 -0.40987 0.000000"/>
-    <parent link="left_knee"/>
-    <child link="left_knee_left_ankle_link1"/>
-    <axis xyz="1 0 0"/>
-  </joint>
   <link name="left_knee_left_ankle_link1">
     <inertial>
       <mass value="1e-02"/>
       <inertia ixx="1e-02" ixy="0" ixz="0" iyy="1e-02" iyz="0" izz="1e-02"/>
     </inertial>
   </link>
-  <joint name="left_knee_left_ankle_joint2" type="continuous">
-    <parent link="left_knee_left_ankle_link1"/>
-    <child link="left_knee_left_ankle_link2"/>
-    <axis xyz="0 1 0"/>
+  <joint name="left_knee_left_ankle_joint1" type="continuous">
+    <origin rpy="0 0 0" xyz="0.000000 -0.40987 0.000000"/>
+    <parent link="left_knee"/>
+    <child link="left_knee_left_ankle_link1"/>
+    <axis xyz="1 0 0"/>
   </joint>
   <link name="left_knee_left_ankle_link2">
     <inertial>
@@ -508,6 +503,11 @@
       <material name="orange"/>
     </visual>
   </link>
+  <joint name="left_knee_left_ankle_joint2" type="continuous">
+    <parent link="left_knee_left_ankle_link1"/>
+    <child link="left_knee_left_ankle_link2"/>
+    <axis xyz="0 1 0"/>
+  </joint>
   <joint name="left_knee_left_ankle_joint3" type="continuous">
     <parent link="left_knee_left_ankle_link2"/>
     <child link="left_ankle"/>
@@ -532,22 +532,17 @@
       </geometry>
     </visual>
   </link>
-  <joint name="chest_left_shoulder_joint1" type="continuous">
-    <origin rpy="0 0 0" xyz="-0.02405 0.24350 -0.18311"/>
-    <parent link="chest"/>
-    <child link="chest_left_shoulder_link1"/>
-    <axis xyz="1 0 0"/>
-  </joint>
   <link name="chest_left_shoulder_link1">
     <inertial>
       <mass value="1e-02"/>
       <inertia ixx="1e-02" ixy="0" ixz="0" iyy="1e-02" iyz="0" izz="1e-02"/>
     </inertial>
   </link>
-  <joint name="chest_left_shoulder_joint2" type="continuous">
-    <parent link="chest_left_shoulder_link1"/>
-    <child link="chest_left_shoulder_link2"/>
-    <axis xyz="0 1 0"/>
+  <joint name="chest_left_shoulder_joint1" type="continuous">
+    <origin rpy="0 0 0" xyz="-0.02405 0.24350 -0.18311"/>
+    <parent link="chest"/>
+    <child link="chest_left_shoulder_link1"/>
+    <axis xyz="1 0 0"/>
   </joint>
   <link name="chest_left_shoulder_link2">
     <inertial>
@@ -561,6 +556,11 @@
       <material name="orange"/>
     </visual>
   </link>
+  <joint name="chest_left_shoulder_joint2" type="continuous">
+    <parent link="chest_left_shoulder_link1"/>
+    <child link="chest_left_shoulder_link2"/>
+    <axis xyz="0 1 0"/>
+  </joint>
   <joint name="chest_left_shoulder_joint3" type="continuous">
     <parent link="chest_left_shoulder_link2"/>
     <child link="left_shoulder"/>
