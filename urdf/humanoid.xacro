@@ -14,7 +14,7 @@
     </inertial>
   </link>
 
-  <joint name="${parent}_${child}_joint1" type="continuous">
+  <joint name="${parent}_${child}_joint1" type="revolute">
 	<xacro:insert_block name="origin"/>
     <parent link="${parent}"/>
     <child link="${parent}_${child}_link1"/>
@@ -36,7 +36,7 @@
 	</visual>  
   </link>
   
-  <joint name="${parent}_${child}_joint2" type="continuous">
+  <joint name="${parent}_${child}_joint2" type="revolute">
     <parent link="${parent}_${child}_link1"/>
     <child link="${parent}_${child}_link2"/>
     <axis xyz="0 1 0" />
@@ -44,7 +44,7 @@
   </joint>
 
 
-  <joint name="${parent}_${child}_joint3" type="continuous">
+  <joint name="${parent}_${child}_joint3" type="revolute">
     <parent link="${parent}_${child}_link2"/>
     <child link="${child}"/>
     <axis xyz="0 0 1" />
