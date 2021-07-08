@@ -70,6 +70,7 @@
     <parent link="root"/>
     <child link="root_chest_link1"/>
     <axis xyz="1 0 0"/>
+    <limit effort="200" lower="1.2" upper="1.2"/>
   </joint>
   <link name="root_chest_link2">
     <inertial>
@@ -87,11 +88,13 @@
     <parent link="root_chest_link1"/>
     <child link="root_chest_link2"/>
     <axis xyz="0 1 0"/>
+    <limit effort="200" lower="1.2" upper="1.2"/>
   </joint>
   <joint name="root_chest_joint3" type="continuous">
     <parent link="root_chest_link2"/>
     <child link="chest"/>
     <axis xyz="0 0 1"/>
+    <limit effort="200" lower="1.2" upper="1.2"/>
   </joint>
   <link name="neck">
     <inertial>
@@ -123,6 +126,7 @@
     <parent link="chest"/>
     <child link="chest_neck_link1"/>
     <axis xyz="1 0 0"/>
+    <limit effort="50" lower="1" upper="1"/>
   </joint>
   <link name="chest_neck_link2">
     <inertial>
@@ -140,11 +144,13 @@
     <parent link="chest_neck_link1"/>
     <child link="chest_neck_link2"/>
     <axis xyz="0 1 0"/>
+    <limit effort="50" lower="1" upper="1"/>
   </joint>
   <joint name="chest_neck_joint3" type="continuous">
     <parent link="chest_neck_link2"/>
     <child link="neck"/>
     <axis xyz="0 0 1"/>
+    <limit effort="50" lower="1" upper="1"/>
   </joint>
   <link name="right_hip">
     <inertial>
@@ -176,6 +182,7 @@
     <parent link="root"/>
     <child link="root_right_hip_link1"/>
     <axis xyz="1 0 0"/>
+    <limit effort="200" lower="1.5" upper="1.5"/>
   </joint>
   <link name="root_right_hip_link2">
     <inertial>
@@ -193,11 +200,13 @@
     <parent link="root_right_hip_link1"/>
     <child link="root_right_hip_link2"/>
     <axis xyz="0 1 0"/>
+    <limit effort="200" lower="1.5" upper="1.5"/>
   </joint>
   <joint name="root_right_hip_joint3" type="continuous">
     <parent link="root_right_hip_link2"/>
     <child link="right_hip"/>
     <axis xyz="0 0 1"/>
+    <limit effort="200" lower="1.5" upper="1.5"/>
   </joint>
   <link name="right_knee">
     <inertial>
@@ -221,7 +230,7 @@
   <joint name="right_knee" type="revolute">
     <parent link="right_hip"/>
     <child link="right_knee"/>
-    <limit effort="1000.0" lower="-3.14" upper="0." velocity="0.5"/>
+    <limit effort="150.0" lower="-3.14" upper="0." velocity="0.5"/>
     <origin rpy="0 0 0" xyz="0.000000 -0.421546 0.000000"/>
     <axis xyz="0.000000 0.000000 1.000000"/>
   </joint>
@@ -255,6 +264,7 @@
     <parent link="right_knee"/>
     <child link="right_knee_right_ankle_link1"/>
     <axis xyz="1 0 0"/>
+    <limit effort="90" lower="1.2" upper="1.2"/>
   </joint>
   <link name="right_knee_right_ankle_link2">
     <inertial>
@@ -272,11 +282,13 @@
     <parent link="right_knee_right_ankle_link1"/>
     <child link="right_knee_right_ankle_link2"/>
     <axis xyz="0 1 0"/>
+    <limit effort="90" lower="1.2" upper="1.2"/>
   </joint>
   <joint name="right_knee_right_ankle_joint3" type="continuous">
     <parent link="right_knee_right_ankle_link2"/>
     <child link="right_ankle"/>
     <axis xyz="0 0 1"/>
+    <limit effort="90" lower="1.2" upper="1.2"/>
   </joint>
   <link name="right_shoulder">
     <inertial>
@@ -308,6 +320,7 @@
     <parent link="chest"/>
     <child link="chest_right_shoulder_link1"/>
     <axis xyz="1 0 0"/>
+    <limit effort="100" lower="3.14" upper="3.14"/>
   </joint>
   <link name="chest_right_shoulder_link2">
     <inertial>
@@ -325,11 +338,13 @@
     <parent link="chest_right_shoulder_link1"/>
     <child link="chest_right_shoulder_link2"/>
     <axis xyz="0 1 0"/>
+    <limit effort="100" lower="3.14" upper="3.14"/>
   </joint>
   <joint name="chest_right_shoulder_joint3" type="continuous">
     <parent link="chest_right_shoulder_link2"/>
     <child link="right_shoulder"/>
     <axis xyz="0 0 1"/>
+    <limit effort="100" lower="3.14" upper="3.14"/>
   </joint>
   <link name="right_elbow">
     <inertial>
@@ -353,7 +368,7 @@
   <joint name="right_elbow" type="revolute">
     <parent link="right_shoulder"/>
     <child link="right_elbow"/>
-    <limit effort="1000.0" lower="0" upper="3.14" velocity="0.5"/>
+    <limit effort="60.0" lower="0" upper="3.14" velocity="0.5"/>
     <origin rpy="0 0 0" xyz="0.000000 -0.274788 0.000000"/>
     <axis xyz="0.000000 0.000000 1.000000"/>
   </joint>
@@ -411,6 +426,7 @@
     <parent link="root"/>
     <child link="root_left_hip_link1"/>
     <axis xyz="1 0 0"/>
+    <limit effort="200" lower="1.5" upper="1.5"/>
   </joint>
   <link name="root_left_hip_link2">
     <inertial>
@@ -428,11 +444,13 @@
     <parent link="root_left_hip_link1"/>
     <child link="root_left_hip_link2"/>
     <axis xyz="0 1 0"/>
+    <limit effort="200" lower="1.5" upper="1.5"/>
   </joint>
   <joint name="root_left_hip_joint3" type="continuous">
     <parent link="root_left_hip_link2"/>
     <child link="left_hip"/>
     <axis xyz="0 0 1"/>
+    <limit effort="200" lower="1.5" upper="1.5"/>
   </joint>
   <link name="left_knee">
     <inertial>
@@ -456,7 +474,7 @@
   <joint name="left_knee" type="revolute">
     <parent link="left_hip"/>
     <child link="left_knee"/>
-    <limit effort="1000.0" lower="-3.14" upper="0." velocity="0.5"/>
+    <limit effort="150.0" lower="-3.14" upper="0." velocity="0.5"/>
     <origin rpy="0 0 0" xyz="0.000000 -0.421546 0.000000"/>
     <axis xyz="0.000000 0.000000 1.000000"/>
   </joint>
@@ -490,6 +508,7 @@
     <parent link="left_knee"/>
     <child link="left_knee_left_ankle_link1"/>
     <axis xyz="1 0 0"/>
+    <limit effort="90" lower="1.2" upper="1.2"/>
   </joint>
   <link name="left_knee_left_ankle_link2">
     <inertial>
@@ -507,11 +526,13 @@
     <parent link="left_knee_left_ankle_link1"/>
     <child link="left_knee_left_ankle_link2"/>
     <axis xyz="0 1 0"/>
+    <limit effort="90" lower="1.2" upper="1.2"/>
   </joint>
   <joint name="left_knee_left_ankle_joint3" type="continuous">
     <parent link="left_knee_left_ankle_link2"/>
     <child link="left_ankle"/>
     <axis xyz="0 0 1"/>
+    <limit effort="90" lower="1.2" upper="1.2"/>
   </joint>
   <link name="left_shoulder">
     <inertial>
@@ -543,6 +564,7 @@
     <parent link="chest"/>
     <child link="chest_left_shoulder_link1"/>
     <axis xyz="1 0 0"/>
+    <limit effort="100" lower="3.14" upper="3.14"/>
   </joint>
   <link name="chest_left_shoulder_link2">
     <inertial>
@@ -560,11 +582,13 @@
     <parent link="chest_left_shoulder_link1"/>
     <child link="chest_left_shoulder_link2"/>
     <axis xyz="0 1 0"/>
+    <limit effort="100" lower="3.14" upper="3.14"/>
   </joint>
   <joint name="chest_left_shoulder_joint3" type="continuous">
     <parent link="chest_left_shoulder_link2"/>
     <child link="left_shoulder"/>
     <axis xyz="0 0 1"/>
+    <limit effort="100" lower="3.14" upper="3.14"/>
   </joint>
   <link name="left_elbow">
     <inertial>
@@ -588,7 +612,7 @@
   <joint name="left_elbow" type="revolute">
     <parent link="left_shoulder"/>
     <child link="left_elbow"/>
-    <limit effort="1000.0" lower="0" upper="3.14" velocity="0.5"/>
+    <limit effort="60.0" lower="0" upper="3.14" velocity="0.5"/>
     <origin rpy="0 0 0" xyz="0.000000 -0.274788 0.000000"/>
     <axis xyz="0.000000 0.000000 1.000000"/>
   </joint>

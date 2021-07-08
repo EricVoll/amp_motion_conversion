@@ -5,7 +5,7 @@
   <color rgba="${255/255} ${108/255} ${10/255} 1.0"/>
 </material>
 
-<xacro:macro name="ball_joint" params="parent child *origin">
+<xacro:macro name="ball_joint" params="parent child limit effort_limit *origin">
 
   <link name="${parent}_${child}_link1">
     <inertial>
@@ -19,6 +19,7 @@
     <parent link="${parent}"/>
     <child link="${parent}_${child}_link1"/>
     <axis xyz="1 0 0" />
+	<limit effort="${effort_limit}" lower="${limit}" upper="${limit}"/>
   </joint>
 
   <link name="${parent}_${child}_link2">
@@ -39,6 +40,7 @@
     <parent link="${parent}_${child}_link1"/>
     <child link="${parent}_${child}_link2"/>
     <axis xyz="0 1 0" />
+	<limit effort="${effort_limit}" lower="${limit}" upper="${limit}"/>
   </joint>
 
 
@@ -46,6 +48,7 @@
     <parent link="${parent}_${child}_link2"/>
     <child link="${child}"/>
     <axis xyz="0 0 1" />
+	<limit effort="${effort_limit}" lower="${limit}" upper="${limit}"/>
   </joint>
 
 </xacro:macro>
@@ -139,7 +142,7 @@
 	</link>
 
 
-	<xacro:ball_joint parent="root" child="chest">
+	<xacro:ball_joint parent="root" child="chest" limit="1.2" effort_limit="200">
 		<origin rpy = "0 0 0" xyz = "0.000000 0.236151 0.000000" />
 	</xacro:ball_joint>
 
@@ -155,7 +158,7 @@
 		</xacro:sphere_v_c>
 	</link>
 
-	<xacro:ball_joint parent="chest" child="neck" >
+	<xacro:ball_joint parent="chest" child="neck" limit="1" effort_limit="50" >
 		<origin rpy = "0 0 0" xyz = "0.000000 0.223894 0.000000" />
 	</xacro:ball_joint>
 	
@@ -171,7 +174,7 @@
 		</xacro:cylinder_v_c>
 	</link>
 
-	<xacro:ball_joint parent="root" child="right_hip">
+	<xacro:ball_joint parent="root" child="right_hip" limit="1.5" effort_limit="200">
 		<origin rpy = "0 0 0" xyz = "0.000000 0.000000 0.084887" />
 	</xacro:ball_joint>
 	
@@ -189,7 +192,7 @@
 	<joint name="right_knee" type="revolute" >
 		<parent link="right_hip" />
 		<child link="right_knee" />
-		<limit effort="1000.0" lower="-3.14" upper="0." velocity="0.5"/>
+		<limit effort="150.0" lower="-3.14" upper="0." velocity="0.5"/>
 		<origin rpy = "0 0 0" xyz = "0.000000 -0.421546 0.000000" />
 		<axis xyz = "0.000000 0.000000 1.000000" />
 	</joint>
@@ -208,7 +211,7 @@
 	</link>
 
 
-	<xacro:ball_joint parent="right_knee" child="right_ankle">
+	<xacro:ball_joint parent="right_knee" child="right_ankle" limit="1.2" effort_limit="90">
 		<origin rpy = "0 0 0" xyz = "0.000000 -0.409870 0.000000" />
 	</xacro:ball_joint>
 
@@ -224,7 +227,7 @@
 		</xacro:cylinder_v_c>
 	</link>
 
-	<xacro:ball_joint parent="chest" child="right_shoulder">
+	<xacro:ball_joint parent="chest" child="right_shoulder" limit="3.14" effort_limit="100">
 		<origin rpy = "0 0 0" xyz = "-0.02406 0.24350 0.18311" />
 	</xacro:ball_joint>
 
@@ -242,7 +245,7 @@
 	<joint name="right_elbow" type="revolute" >
 		<parent link="right_shoulder" />
 		<child link="right_elbow" />
-		<limit effort="1000.0" lower="0" upper="3.14" velocity="0.5"/>
+		<limit effort="60.0" lower="0" upper="3.14" velocity="0.5"/>
 		<origin rpy = "0 0 0" xyz = "0.000000 -0.274788 0.000000" />
 		<axis xyz = "0.000000 0.000000 1.000000" />
 	</joint>
@@ -277,7 +280,7 @@
 		</xacro:cylinder_v_c>
 	</link>
 
-	<xacro:ball_joint parent="root" child="left_hip">
+	<xacro:ball_joint parent="root" child="left_hip" limit="1.5" effort_limit="200">
 		<origin rpy = "0 0 0" xyz = "0.000000 0.000000 -0.084887" />
 	</xacro:ball_joint>
 	
@@ -296,7 +299,7 @@
 	<joint name="left_knee" type="revolute" >
 		<parent link="left_hip" />
 		<child link="left_knee" />
-		<limit effort="1000.0" lower="-3.14" upper="0." velocity="0.5"/>
+		<limit effort="150.0" lower="-3.14" upper="0." velocity="0.5"/>
 		<origin rpy = "0 0 0" xyz = "0.000000 -0.421546 0.000000" />
 		<axis xyz = "0.000000 0.000000 1.000000" />
 	</joint>
@@ -313,7 +316,7 @@
 		</xacro:box_v_c>
 	</link>
 
-	<xacro:ball_joint parent="left_knee" child="left_ankle">
+	<xacro:ball_joint parent="left_knee" child="left_ankle" limit="1.2" effort_limit="90">
 		<origin rpy = "0 0 0" xyz = "0.000000 -0.40987 0.000000" />
 	</xacro:ball_joint>
 	
@@ -329,7 +332,7 @@
 		</xacro:cylinder_v_c>
 	</link>
 
-	<xacro:ball_joint parent="chest" child="left_shoulder">
+	<xacro:ball_joint parent="chest" child="left_shoulder" limit="3.14" effort_limit="100">
 		<origin rpy = "0 0 0" xyz = "-0.02405 0.24350 -0.18311" />
 	</xacro:ball_joint>
 	
@@ -348,7 +351,7 @@
 	<joint name="left_elbow" type="revolute" >
 		<parent link="left_shoulder" />
 		<child link="left_elbow" />
-		<limit effort="1000.0" lower="0" upper="3.14" velocity="0.5"/>
+		<limit effort="60.0" lower="0" upper="3.14" velocity="0.5"/>
 		<origin rpy = "0 0 0" xyz = "0.000000 -0.274788 0.000000" />
 		<axis xyz = "0.000000 0.000000 1.000000" />
 	</joint>
